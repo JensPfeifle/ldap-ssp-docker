@@ -41,7 +41,7 @@ docker run -d -v /srv/appdata/ldapssp/config:/config \
               ldapssp
 ```
 
-If you have docker-compose, you can edit `docker-compose.yml` to set the configuration, then build and start the container with docker-compose. 
+If you have docker-compose, you can edit `docker-compose.yml` (see [here](https://github.com/JensPfeifle/ldap-ssp-docker/blob/master/docker-compose.yml)) to set the configuration, then build and start the container with docker-compose. 
 ```
 docker-compose up  -d --build ldapssp
 ```
