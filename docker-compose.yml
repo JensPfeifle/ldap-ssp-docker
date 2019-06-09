@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  ldapssp:
+    build:
+      context: ./
+    image: ldapssp:1.3
+    container_name: ldapssp
+    environment:
+      - APACHE_SERVER_NAME=passwordreset.domain.com
+    volumes:
+      # log files - optional
+      - /srv/appdata/ldapssp/logs:/var/log/apache2
+      # configuration file for ldap-ssp
+      - /srv/appdata/ldapssp/config:/config
+    ports:
+      - 80:80
