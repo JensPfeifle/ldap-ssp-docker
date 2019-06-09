@@ -14,14 +14,16 @@ Obviously, Docker must be [installed](https://docs.docker.acom/get-started/). Do
 
 ### Building the image
 
-Clone this repository with
+Clone this repository:
 
 ```
 git clone https://github.com/jenspfeifle/ldap-ssp-docker
 ```
-
-And build with
-
+Change directory:
+```
+cd ldap-ssp-docker
+```
+And build with:
 ```
 docker build -t ldapssp .
 ```
@@ -33,7 +35,10 @@ When starting the container, you must mount a directory from the host system to 
 For example (if you built as shown above):
 
 ```
-docker run -d -v /srv/appdata/ldapssp/config:/config -p 80:80 -e APACHE_SERVER_NAME=passwordreset.example.com ldapssp
+docker run -d -v /srv/appdata/ldapssp/config:/config \
+           -p 80:80 \
+           -e APACHE_SERVER_NAME=passwordreset.example.com \
+              ldapssp
 ```
 
 If you have docker-compose, you can edit `docker-compose.yml` to set the configuration, then build and start the container with docker-compose. 
